@@ -39,8 +39,7 @@ for (let productos = 0; productos <= 10; productos++) {
 
 
 //Array de objetos de Productos, en este caso de hamburguesas
-
-const productosHamburguesas =[
+const productosArray =[
     new Producto("1","Classic Burger","Medallón de carne, cheddar, lechuga y tomate.","/images/hamburguesas/classic-burger.jpg",3000),
     new Producto("2","Cheese Burger","Medallón de carne, cheddar y salsa bonchi.","/images/hamburguesas/cheese-burger.jpg",3500),
     new Producto("3","Doble Cheddar & Bacon","Doble medallón de carne, bacon, extra cheddar y salsa bonchi.","/images/hamburguesas/doble-cheddar-y-bacon.jpg",4000),
@@ -67,4 +66,4 @@ function agregarCards(productos){
     })
 }
 
-agregarCards(productosHamburguesas);
+agregarCards(productosArray);
