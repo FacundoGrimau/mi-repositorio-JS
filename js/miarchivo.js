@@ -45,7 +45,7 @@ const productosArray =[
     new Producto("3","Doble Cheddar & Bacon","Doble medallón de carne, bacon, extra cheddar y salsa bonchi.","/images/hamburguesas/doble-cheddar-y-bacon.jpg",4000),
     new Producto("4","Bonchi Burger","Medallón de carne, BBQ, cheddar, bacon, lechuga, tomate y salsa bonchi.","/images/hamburguesas/bonchi-burger.jpg",3800),
     new Producto("5","Crispy Chicken","Pechuga de pollo crujiente, lechuga y salsa bonchi.","/images/hamburguesas/crispy-chicken.jpg",3500),
-    new Producto("6","Veggie Burger","Medallón de portobellos con muzzarella, lechuga y tomate.","/images/hamburguesas/veggie-burger.jpg",3000),
+    new Producto("6","Veggie Burger","Medallón de portobellos con muzzarella, lechuga y tomate.","/images/hamburguesas/veggie-burger.jpg",3000)
 ]
 
 //llamamos a nuestro nodos desde html
