@@ -1,4 +1,4 @@
-// Datos para ingresar al sitio:
+/* // Datos para ingresar al sitio:
 let ingresoDeNombre = prompt("Ingresa tu nombre");
 let ingresoDeApellido = prompt("Ingresar tu apellido");
 const EDAD = parseInt(prompt("Ingresar Edad"));
@@ -26,4 +26,4 @@ function mostrar(mensaje){
 
 saludo(ingresoDeNombre, ingresoDeApellido);
 resultadoEdad = comprobarEdad();
-mostrar(resultadoEdad);
+mostrar(resultadoEdad); */
