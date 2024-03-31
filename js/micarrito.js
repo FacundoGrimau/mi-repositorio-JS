@@ -32,7 +32,7 @@ function renderizarProductos(){
         <img src=${producto.imagen}>
         <h4>${producto.descripcion}</h4>
         <p>${producto.precio}</p>
-        <button class="btn-agregar-carrito" data-id="${producto.id}">Agregar al Carrito</button> 
+        <button id="tostify" class="btn-agregar-carrito" data-id="${producto.id}">Agregar al Carrito</button> 
         `;
         contenedorProductos.appendChild(div);
     })
@@ -104,3 +104,19 @@ contenedorProductos.addEventListener('click',function(evento){
         });
 
 renderizarProductos();
+
+
+// Aviso de producto agregado al carrito
+const tostify = document.getElementById('tostify');
+
+tostify.addEventListener('click',()=>{
+    Toastify({
+        text: "Se agregó un producto al carrito",
+        duration: 3000,
+        position: "right",
+        gravity: "top-right",
+        style:{
+            background: "red"
+        }
+    }).showToast();
+});
