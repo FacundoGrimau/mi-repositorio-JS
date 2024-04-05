@@ -89,6 +89,7 @@ function realizarCompra(){
         imageWidth: 300,
         imageHeight: 200,
         confirmButtonText:"Aceptar"});
+        elementosCarrito.length = 0;
     renderizarCarrito();
 }
 
