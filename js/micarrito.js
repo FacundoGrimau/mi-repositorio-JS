@@ -84,7 +84,7 @@ function renderizarCarrito() {
 function realizarCompra(){
     Swal.fire({
         title: (`Importe Total: $${totalSpan.textContent}`),
-        text: "Muchas gracias por confiar en nosotros !",
+        text: "Muchas gracias por su compra !",
         imageUrl: "../images/compra-carrito.jpg",
         imageWidth: 300,
         imageHeight: 200,
