@@ -54,6 +54,21 @@ function agregarAlCarrito(idProducto){
     renderizarCarrito();
 }
 
+// Aviso de producto agregado al carrito
+const tostify = document.getElementById('tostify');
+
+tostify.addEventListener('click',()=>{
+    Toastify({
+        text: "Se agregó un producto al carrito",
+        duration: 3000,
+        position: "right",
+        gravity: "top-right",
+        style:{
+            background: "red"
+        }
+    }).showToast();
+});
+
 
 // Eliminar el producto
 
@@ -103,19 +118,3 @@ contenedorProductos.addEventListener('click',function(evento){
         });
 
 renderizarProductos();
-
-
-// Aviso de producto agregado al carrito
-const tostify = document.getElementById('tostify');
-
-tostify.addEventListener('click',()=>{
-    Toastify({
-        text: "Se agregó un producto al carrito",
-        duration: 3000,
-        position: "right",
-        gravity: "top-right",
-        style:{
-            background: "red"
-        }
-    }).showToast();
-});
