@@ -119,3 +119,10 @@ tostify.addEventListener('click',()=>{
         }
     }).showToast();
 });
+
+
+// Renderizar productos al cargar la página
+  window.addEventListener('load', () => {
+    renderizarProductos();
+    renderizarCarrito();
+  });
