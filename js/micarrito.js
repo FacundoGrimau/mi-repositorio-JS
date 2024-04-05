@@ -43,7 +43,7 @@ function renderizarProductos(){
 function agregarAlCarrito(idProducto){
     const itemExistente = elementosCarrito.find(item => item.id === idProducto);
     const itemsCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    itemsCarrito.push(producto);
+    itemsCarrito.push(elementosCarrito);
     localStorage.setItem('carrito', JSON.stringify(itemsCarrito));
     if(itemExistente){
         itemExistente.cantidad++
