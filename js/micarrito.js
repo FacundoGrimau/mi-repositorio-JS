@@ -82,9 +82,7 @@ function renderizarCarrito() {
 };
 
 function realizarCompra(){
-    alert(`Importe Total: $${totalSpan.textContent}`);
-    elementosCarrito.length = 0;
-    Swal.fire({
+    Swal.fire((`Importe Total: $${totalSpan.textContent}`),{
         title: "Compra Finalizada",
         text: "Muchas gracias por confiar en nosotros !",
         imageUrl: "../images/compra-carrito.jpg",
