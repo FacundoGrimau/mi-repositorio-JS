@@ -42,6 +42,9 @@ function renderizarProductos(){
 
 function agregarAlCarrito(idProducto){
     const itemExistente = elementosCarrito.find(item => item.id === idProducto);
+    const itemsCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    itemsCarrito.push(idProducto);
+    localStorage.setItem('carrito', JSON.stringify(itemsCarrito));
     if(itemExistente){
         itemExistente.cantidad++
     }else{
@@ -122,7 +125,7 @@ tostify.addEventListener('click',()=>{
 
 
 // Renderizar productos al cargar la página
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
     renderizarProductos();
     renderizarCarrito();
   });
