@@ -133,7 +133,7 @@ tostify.addEventListener('click',()=>{
         position: "right",
         gravity: "top-right",
         style:{
-            background: "red"
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
         }
     }).showToast();
 });
