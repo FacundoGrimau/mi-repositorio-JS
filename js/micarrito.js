@@ -1,4 +1,16 @@
-// CARRITO DE COMPRA:
+// Funcion para obtener elementos del carrito:
+function obtenerElementosCarritoDesdeLocalStorage (){
+    const elementosCarritoGuardados = localStorage.getItem("carrito");
+    return elementosCarritoGuardados ? JSON.parse(elementosCarritoGuardados) : [];
+}
+
+// Funcion de guardar los elementos:
+function guardarElementosCarritoEnLocalStorage(){
+   localStorage.setItem("carrito", JSON.stringify(elementosCarrito))
+}
+
+
+// Listado de Productos:
 const productos =[
     {id:1, nombre:"Classic Burger", descripcion:"Medallón de carne, cheddar, lechuga y tomate.", imagen:"../images/hamburguesas/classic-burger.jpg", precio:3000},
     {id:2, nombre:"Cheese Burger", descripcion:"Medallón de carne, cheddar y salsa bonchi.",imagen:"../images/hamburguesas/cheese-burger.jpg", precio:3500},
@@ -17,11 +29,11 @@ const productos =[
     {id:15, nombre:"Cervezas", descripcion:"", imagen:"../images/bebidas/cervezas.jpg", precio:1000},
 ]
 
-
 const elementosCarrito = [];
 const contenedorProductos = document.getElementById('productos');
 const contenedorElementosCarrito = document.getElementById('elementos-carrito');
 const totalSpan = document.getElementById('total');
+
 
 function renderizarProductos(){
     productos.forEach(producto =>{
@@ -38,28 +50,29 @@ function renderizarProductos(){
     })
 }
 
-// Agregar al carrito el producto
 
+// Elementos del carrito y total:
+const carritoConElementos = obtenerElementosCarritoDesdeLocalStorage();
+let totalCarrito = 0;
+
+
+// Agregar al carrito el producto:
 function agregarAlCarrito(idProducto){
     const itemExistente = elementosCarrito.find(item => item.id === idProducto);
-    const itemsCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    itemsCarrito.push();
-    localStorage.setItem('carrito', JSON.stringify(elementosCarrito));
     if(itemExistente){
         itemExistente.cantidad++
     }else{
         const producto = productos.find(p => p.id === idProducto);
         if(producto){
             elementosCarrito.push({...producto, cantidad:1});
-
         }
     }
+    guardarElementosCarritoEnLocalStorage();
     renderizarCarrito();
 }
 
 
-// Eliminar el producto
-
+// Eliminar el producto:
 function eliminarDelCarrito(idProducto){
     const indice = elementosCarrito.findIndex(item => item.id === idProducto);
     if(indice !== -1){
@@ -84,6 +97,8 @@ function renderizarCarrito() {
     totalSpan.textContent = precioTotal;
 };
 
+
+// Utilizacion del sweetAlert al finalizar la compra:
 function realizarCompra(){
     Swal.fire({
         title: (`Importe Total: $${totalSpan.textContent}`),
@@ -108,7 +123,7 @@ contenedorProductos.addEventListener('click',function(evento){
 renderizarProductos();
 
 
-// Aviso de producto agregado al carrito
+// Aviso de producto agregado al carrito:
 const tostify = document.getElementById('tostify');
 
 tostify.addEventListener('click',()=>{
@@ -122,10 +137,3 @@ tostify.addEventListener('click',()=>{
         }
     }).showToast();
 });
-
-
-// Renderizar productos al cargar la página
-window.addEventListener('load', () => {
-    renderizarProductos();
-    renderizarCarrito();
-  });
